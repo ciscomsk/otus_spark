@@ -18,8 +18,7 @@ object Less_1_check extends App {
   /**
    * Количество побед спортсмена в разрезе по турнирам
    */
-  def winsInTourneysByName(winnerName: String)(source: BufferedSource): Map[String, Int] = {
-
+  def winsInTourneysByName(winnerName: String): Map[String, Int] = {
     val winner: Int = headerMap("winner_name")
 
     val winsInMatches: List[String] = lines.filter(x => x.split(",")(winner).contains(winnerName))
@@ -33,13 +32,12 @@ object Less_1_check extends App {
     winsByTourneys
   }
 
-  println(winsInTourneysByName("Daniil Medvedev")(source))
+  println(winsInTourneysByName("Daniil Medvedev"))
 
   /**
    * Количество различных турниров в разрезе по месяцам
    */
   def distinctTourneysByMonth: Map[String, Int] = {
-
     val t_date: Int = headerMap("tourney_date")
 
     val distinctTourneysById: List[String] = lines.distinctBy(x => x.split(",")(0))
