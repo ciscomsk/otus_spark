@@ -38,7 +38,7 @@ object Less_1_check extends App {
   /**
    * Количество различных турниров в разрезе по месяцам
    */
-  def distinctTourneysByMonth(source: BufferedSource): Map[String, Int] = {
+  def distinctTourneysByMonth: Map[String, Int] = {
 
     val t_date: Int = headerMap("tourney_date")
 
@@ -53,6 +53,6 @@ object Less_1_check extends App {
     tourneysByMonth
   }
 
-  println(distinctTourneysByMonth(source))
+  println(distinctTourneysByMonth)
 
 }
